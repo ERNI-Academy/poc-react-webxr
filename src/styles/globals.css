@@ -1,0 +1,18 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+  color: white;
+  background: #0b1418;
+}
+
+a {
+  color: rgb(0, 153, 255);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}

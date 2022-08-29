@@ -1,0 +1,15 @@
+.board {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+.row {
+  display: flex;
+  flex-flow: row no-wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}

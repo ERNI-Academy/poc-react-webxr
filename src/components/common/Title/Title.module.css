@@ -1,0 +1,27 @@
+.container {
+  padding: 2px 12px;
+}
+.title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border-top: 4px solid rgb(0, 68, 255);
+  border-bottom: 4px solid rgb(0, 68, 255);
+  padding: 10px;
+  color: #29658d;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
+    -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  animation: color-animation 4s linear infinite;
+}
+
+@keyframes color-animation {
+  0%,
+  100% {
+    color: #22cbff;
+  }
+  50% {
+    color: #29658d;
+  }
+}

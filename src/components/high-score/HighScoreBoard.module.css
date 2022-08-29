@@ -1,0 +1,16 @@
+.table {
+  width: 100%;
+  padding: 12px;
+}
+
+.table th {
+  border-bottom: 2px solid white;
+}
+
+.table tr {
+  text-align: center;
+}
+
+.table td {
+  text-transform: uppercase;
+}
