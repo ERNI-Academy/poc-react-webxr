@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Game2D from "../components/2d/Game2D/Game2D";
+import Game3D from "../components/3d/Game3D/Game3D";
 import MainLayout from "../components/layouts/MainLayout";
+import useVR from "../hooks/useVR";
 
 const GamePage = () => {
-  const [vrMode, setVrMode] = useState(false);
+  const { supported: vrMode } = useVR();
   return (
     <MainLayout>
-      <div>{vrMode ? <span>Not Implemented</span> : <Game2D />}</div>
+      <div>{vrMode ? <Game3D /> : <Game2D />}</div>
     </MainLayout>
   );
 };

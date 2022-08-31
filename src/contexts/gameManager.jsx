@@ -10,11 +10,11 @@ export const GameManagerContext = createContext({
   activeMoleIndex: -1,
   round: 0,
   points: 0,
-  timeLeft: 20,
+  timeLeft: 60,
   firstGame: true,
   config: {
     pointsHit: 10,
-    gameTime: 20000,
+    gameTime: 60000,
   },
 });
 
@@ -22,8 +22,8 @@ export const useGameManager = () => useContext(GameManagerContext);
 
 export const GameManagerProvider = ({ children, options }) => {
   const config = {
-    roundTime: 1000,
-    gameTime: 20000,
+    roundTime: 2000,
+    gameTime: 60000,
     pointsHit: 10,
     ...options,
   };
@@ -51,6 +51,7 @@ export const GameManagerProvider = ({ children, options }) => {
     setFirstGame(false);
     setGameReady(false);
     setTimeLeft(Math.floor(config.gameTime / 1000));
+    console.log("startGame Called");
   }, [config.gameTime]);
 
   const endGame = useCallback(() => {
@@ -60,7 +61,7 @@ export const GameManagerProvider = ({ children, options }) => {
   useEffect(() => {
     if (gameStarted) {
       let roundTimer = setTimeout(() => {
-        const nextMoleIndex = Math.floor(Math.random() * 9);
+        const nextMoleIndex = Math.floor(Math.random() * 4);
         setActiveMoleIndex(nextMoleIndex);
         setRound(round + 1);
         setTime(config.roundTime);

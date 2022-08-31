@@ -11,14 +11,15 @@ const Game2D = () => {
   const router = useRouter();
 
   useEffect(() => {
-    startGame();
+    // console.log("start from 2d");
+    // startGame();
   }, [startGame]);
 
   useEffect(() => {
-    if (!gameReady && timeLeft == 0) {
-      endGame();
-      router.push("/game-result");
-    }
+    // if (!gameReady && timeLeft == 0) {
+    //   endGame();
+    //   router.push("/game-result");
+    // }
   }, [endGame, gameReady, router, timeLeft]);
 
   return (
