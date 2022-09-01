@@ -11,13 +11,13 @@ const Background3D = () => {
   });
   return (
     <group>
-      <Plane args={[20, 7]} position={[4, 1, -2]} rotation={[0, -1, 0]}>
+      <Plane args={[20, 7]} position={[4, 2.5, -2]} rotation={[0, -1, 0]}>
         <meshStandardMaterial map={texture} />
       </Plane>
-      <Plane args={[20, 7]} position={[0, 1, -5]} rotation={[0, 0, 0]}>
+      <Plane args={[20, 7]} position={[0, 2.5, -5]} rotation={[0, 0, 0]}>
         <meshStandardMaterial map={texture} />
       </Plane>
-      <Plane args={[20, 7]} position={[-4, 1, -2]} rotation={[0, 1, 0]}>
+      <Plane args={[20, 7]} position={[-4, 2.5, -2]} rotation={[0, 1, 0]}>
         <meshStandardMaterial map={texture} />
       </Plane>
     </group>
