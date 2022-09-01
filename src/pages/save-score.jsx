@@ -1,14 +1,22 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import shallow from "zustand/shallow";
 import Button from "../components/common/Button/Button";
 import MainLayout from "../components/layouts/MainLayout";
-import { useGameManager } from "../contexts/gameManager";
 import { scoreService } from "../services/scoreService";
+import { useGameStore } from "../stores/gameStore";
 
 const SaveScorePage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const { points } = useGameManager();
+
+  const { points } = useGameStore(
+    (state) => ({
+      points: state.points,
+    }),
+    shallow
+  );
+
   const router = useRouter();
   return (
     <MainLayout>
@@ -43,7 +51,7 @@ const SaveScorePage = () => {
               if (!error) {
                 router.push("/?save_score=true");
               } else {
-                //show error
+                //TODO: show error
               }
             }}
             disabled={!name || !points}

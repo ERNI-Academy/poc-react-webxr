@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Game2D from "../components/2d/Game2D/Game2D";
-import Game3D from "../components/3d/Game3D/Game3D";
+import Game2D from "../components/2d/Game2D";
+import Game3D from "../components/3d/Game3D";
 import MainLayout from "../components/layouts/MainLayout";
 import useVR from "../hooks/useVR";
 

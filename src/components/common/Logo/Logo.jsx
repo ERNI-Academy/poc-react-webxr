@@ -3,7 +3,7 @@ import styles from "./Logo.module.css";
 const Logo = () => {
   return (
     <div className={styles.logo}>
-      <img src="/logo.png" alt="Racoon Invasion, join.erni" />
+      <img src="/logo.png" alt="Mole attack, join.erni" />
     </div>
   );
 };

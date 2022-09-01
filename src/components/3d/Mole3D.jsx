@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { Interactive } from "@react-three/xr";
-import { useBox } from "@react-three/cannon";
 import { useFrame } from "@react-three/fiber";
-import { useGameStore } from "../../../stores/gameStore";
+import { useGameStore } from "../../stores/gameStore";
 
 const Mole3D = ({ id, position, ...props }) => {
   const { nodes, materials } = useGLTF("/mole.gltf");
@@ -12,9 +11,7 @@ const Mole3D = ({ id, position, ...props }) => {
   useFrame(() => {
     const isActive = useGameStore.getState().activeMoleIndex === id;
     ref.current.position.y = isActive ? 0.2 : position[1];
-    console.log("doHit? ", ref.current.doHit);
     if (ref.current.doHit) {
-      console.log("isActive? ", isActive ? "true" : "false");
       if (isActive) {
         useGameStore.getState().hit();
       }
@@ -23,9 +20,7 @@ const Mole3D = ({ id, position, ...props }) => {
   });
 
   const onInteractive = (e) => {
-    //console.log(e);
     if (e?.intersection?.distance < 0.05) {
-      console.log(e.intersection?.distance);
       ref.current.doHit = true;
     }
   };

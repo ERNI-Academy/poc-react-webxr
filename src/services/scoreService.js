@@ -5,7 +5,6 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPA_KEY;
 
 class ScoreService {
   constructor() {
-    console.log("key: ", supabaseKey);
     this.client = createClient(supabaseUrl, supabaseKey);
   }
   async getScores() {

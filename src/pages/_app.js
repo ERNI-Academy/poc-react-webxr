@@ -1,12 +1,8 @@
-import { GameManagerProvider } from "../contexts/gameManager";
 import "../styles/globals.css";
+import "../styles/animations.css";
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <GameManagerProvider>
-      <Component {...pageProps} />
-    </GameManagerProvider>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;

@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Button from "../components/common/Button/Button";
-import Label2D from "../components/2d/Label2D/Label2D";
-import { useGameManager } from "../contexts/gameManager";
+import Label2D from "../components/2d/Label2D";
 import { useRouter } from "next/router";
 import MainLayout from "../components/layouts/MainLayout";
 import { scoreService } from "../services/scoreService";
+import { useGameStore } from "../stores/gameStore";
+import shallow from "zustand/shallow";
 
 const GameResultPage = () => {
-  const { points } = useGameManager();
   const router = useRouter();
-  const [position, setPosition] = useState("N/A");
+  const [position, setPosition] = useState("...");
+
+  const { points } = useGameStore(
+    (state) => ({
+      points: state.points,
+    }),
+    shallow
+  );
+
   useEffect(() => {
     const getPosition = async () => {
       const pos = await scoreService.getPosition(points);
@@ -17,6 +25,7 @@ const GameResultPage = () => {
     };
     points && getPosition();
   }, [points]);
+
   return (
     <MainLayout>
       <div>
