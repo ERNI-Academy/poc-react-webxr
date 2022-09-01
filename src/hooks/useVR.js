@@ -5,8 +5,8 @@ const useVR = () => {
   useEffect(() => {
     const checkAndSetVrSupport = async () => {
       const support = await navigator?.xr?.isSessionSupported("immersive-vr");
-      setSupported(!!support);
-      //setSupported(false);
+      //setSupported(!!support);
+      setSupported(true);
     };
     checkAndSetVrSupport();
   }, []);

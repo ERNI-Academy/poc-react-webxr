@@ -6,7 +6,7 @@ const Player3D = ({ children }) => {
   useEffect(() => {
     player.position.x = 0;
     player.position.y = 0;
-    player.position.z = 0.2;
+    player.position.z = 0.5;
   }, [player]);
   return <></>;
 };

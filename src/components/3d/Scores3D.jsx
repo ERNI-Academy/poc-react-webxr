@@ -13,11 +13,19 @@ const Scores3D = () => {
 
   return (
     <group>
-      <Text position={[-1.5, 1.3, 0]} scale={[2, 2, 2]} rotation={[0, 0.6, 0]}>
+      <Text
+        position={[-1.1, 1, -0.4]}
+        scale={[2, 2, 2]}
+        rotation={[-0.3, 0.6, 0]}
+      >
         Points: {points}
         <meshNormalMaterial />
       </Text>
-      <Text position={[1, 1.3, -0.6]} scale={[2, 2, 2]} rotation={[0, -0.6, 0]}>
+      <Text
+        position={[1, 1, -0.4]}
+        scale={[2, 2, 2]}
+        rotation={[-0.3, -0.6, 0]}
+      >
         Time: {timeLeft}
         <meshNormalMaterial />
       </Text>

@@ -11,18 +11,17 @@ const Button3D = ({ onInteraction, children }) => {
           }
         }}
       >
-        <group onPointerOver={() => onInteraction()}>
-          <Text position={[0, 1, 0.06]} color={"#000"}>
+        <group>
+          <Text position={[0, 1, 0.06]} color={"#fff"}>
             {children}
           </Text>
           <RoundedBox
             position={[0, 1, 0]}
             scale={[0.7, 0.4, 0.1]}
-            color={"hotpink"}
             radius={0.05}
             smoothness={4}
           >
-            <meshBasicMaterial color="hotpink" />
+            <meshBasicMaterial color="black" />
           </RoundedBox>
         </group>
       </Interactive>

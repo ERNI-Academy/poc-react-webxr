@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useState } from "react";
-import { OrbitControls, Environment } from "@react-three/drei";
+import { OrbitControls, Environment, Box, Plane } from "@react-three/drei";
 import BoardGame3D from "./BoardGame3D";
 import { VRButton, XR, Hands } from "@react-three/xr";
 import Player3D from "./Player3D";
@@ -12,6 +12,8 @@ import MoleList3D from "./MoleList3D";
 import Button3D from "./Button3D";
 import GameController3D from "./GameController3D";
 import { useRouter } from "next/router";
+import Logo3D from "./Logo3D";
+import Background3D from "./Background3D";
 
 const VR_SESSION_FEATURES = [
   "local-floor",
@@ -58,19 +60,27 @@ const Game3D = () => {
           <GameController3D isGameInit={isGameInit} onGameEnd={onGameEnd} />
           <Player3D />
           <Suspense fallback={null}>
+            <Background3D />
             <Floor3D />
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
             <OrbitControls autoRotate={false} />
             <Environment preset="city" />
             <Hands />
-            <group visible={gameStarted}>
+            <group
+              visible={gameStarted}
+              rotation={[0.3, 0, 0]}
+              position={[0, 0.5, 0]}
+            >
+              <Logo3D />
               <MoleList3D />
-              <BoardGame3D position={[0, 0.5, 0]} />
+              <BoardGame3D />
               <Scores3D />
             </group>
             {!gameStarted && (
-              <Button3D onInteraction={() => initGame()}>Start Game</Button3D>
+              <Button3D onInteraction={() => initGame()}>
+                Touch to start
+              </Button3D>
             )}
           </Suspense>
         </XR>
@@ -78,7 +88,7 @@ const Game3D = () => {
       <style jsx>{`
         div {
           height: 600px;
-          background: goldenrod;
+          background: black;
         }
       `}</style>
     </div>

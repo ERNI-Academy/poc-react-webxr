@@ -1,14 +1,21 @@
 import create from "zustand";
 
+const CONFIG = {
+  pointsPerHit: 20,
+  totalTime: 40000,
+  roundTime: 1000,
+  moles: 9,
+};
+
 const useGameStore = create((set, get) => ({
   gameStarted: false,
   activeMoleIndex: -1,
   round: 0,
   points: 0,
   time: 0,
-  timeLeft: Math.floor(10000 / 1000),
+  timeLeft: Math.floor(CONFIG.totalTime / 1000),
   timeoutId: null,
-  pointsPerHit: 20,
+  pointsPerHit: CONFIG.pointsPerHit,
   hit: () => {
     const gameStarted = get().gameStarted;
     if (gameStarted) {
@@ -22,7 +29,7 @@ const useGameStore = create((set, get) => ({
       round: 0,
       time: 0,
       gameStarted: true,
-      timeLeft: Math.floor(10000 / 1000), // Total time
+      timeLeft: Math.floor(CONFIG.totalTime / 1000), // Total time
     }));
     get().updateTimeLeft();
     get().nextRound();
@@ -32,13 +39,15 @@ const useGameStore = create((set, get) => ({
     let nextTimeoutId = null;
     if (timeoutId) clearTimeout(timeoutId);
     if (get().timeLeft > 2) {
-      nextTimeoutId = setTimeout(get().nextRound, 1000);
+      nextTimeoutId = setTimeout(get().nextRound, CONFIG.roundTime);
     }
-    const nextMoleIndex = Math.floor(Math.random() * (8 - 0 + 1)); // Max - Min
+    const nextMoleIndex = Math.floor(
+      Math.random() * (CONFIG.moles - 1 - 0 + 1)
+    ); // Max - Min
     set((state) => ({
       activeMoleIndex: nextMoleIndex,
       round: state.round + 1,
-      time: 1000, //Round Time
+      time: CONFIG.roundTime, //Round Time
       timeoutId: nextTimeoutId,
     }));
   },
