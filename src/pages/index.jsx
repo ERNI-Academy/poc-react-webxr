@@ -28,10 +28,13 @@ export default function Home() {
         <div>
           <p>Welcome to &quot;Mole Attack&quot; simulator!</p>
           <p>
-            We have a problem with some cute-but-not-friendly moles in our
-            basement, our engineers have been thinking ways to get rid off them
-            and they have manage to build this &quot;simulator&quot; to help us
-            get the best people on board to succeed in our mission.
+            This is the situation: We have a problem with some
+            cute-but-not-friendly moles in our basement and we need your help.
+          </p>
+          <p>
+            Our engineers have been thinking ways to get rid off them and they
+            have managed to build this &quot;simulator&quot; to help us get the
+            best people on board to succeed in our mission.
           </p>
           <p>Are you up for this adventure?</p>
           <p>Good luck and be safe out there.</p>
@@ -39,14 +42,14 @@ export default function Home() {
 
         <div className="margin-top">
           <Button onClick={() => router.push("/game")} animate>
-            Start simulator
+            Go to the simulator
           </Button>
         </div>
 
         <div className="margin-top">
           <p>
             Do you want to check what our engineers (we call them ERNIans) are
-            up to? Check out our social profiles and Github account.
+            up to? Check out our social profiles.
           </p>
           <ul className="social-list">
             <li>
@@ -94,9 +97,11 @@ export default function Home() {
           padding: 0;
           margin: 0;
         }
-        .social-list ul {
+        ul.social-list {
           display: flex;
           flex-flow: row wrap;
+          justify-content: center;
+          align-items: center;
         }
         .social-list li {
           display: inline-block;

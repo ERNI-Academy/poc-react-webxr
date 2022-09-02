@@ -3,7 +3,7 @@ import { applyProps } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 
 const BoardGame3D = (props) => {
-  const { scene, materials } = useGLTF("/game-board.gltf");
+  const { scene } = useGLTF("/game-board.gltf");
   return (
     <primitive
       scale={[0.8, 0.8, 0.8]}
@@ -13,5 +13,6 @@ const BoardGame3D = (props) => {
     />
   );
 };
+useGLTF.preload("/game-board.gltf");
 
 export default BoardGame3D;

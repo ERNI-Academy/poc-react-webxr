@@ -16,7 +16,7 @@ const HighScore = () => {
   }, []);
   return (
     <div className={styles.container}>
-      <Title>High scores</Title>
+      <Title>Simulator scores</Title>
       <HighScoreBoard scores={scores} />
     </div>
   );
