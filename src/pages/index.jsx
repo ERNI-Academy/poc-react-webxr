@@ -11,9 +11,11 @@ import Button from "../components/common/Button/Button";
 import HighScore from "../components/high-score/HighScore";
 import { useRouter } from "next/router";
 import MainLayout from "../components/layouts/MainLayout";
+import useVR from "../hooks/useVR";
 
 export default function Home() {
   const router = useRouter();
+  const {supported: vrSupport} = useVR()
   return (
     <div>
       <Head>
@@ -41,8 +43,8 @@ export default function Home() {
         </div>
 
         <div className="margin-top">
-          <Button onClick={() => router.push("/game")} animate>
-            Go to the simulator
+          <Button onClick={() => router.push(vrSupport ? "/game-3d" : "/game-2d")} animate>
+            Check simulator
           </Button>
         </div>
 
