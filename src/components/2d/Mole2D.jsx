@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useState} from "react";
 import shallow from "zustand/shallow";
 import { useGameStore } from "../../stores/gameStore";
 import {useIdleTimer} from "react-idle-timer";
