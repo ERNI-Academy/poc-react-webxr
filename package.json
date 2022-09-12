@@ -18,6 +18,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-feather": "^2.0.10",
+    "react-idle-timer": "^5.4.2",
     "react-type-animation": "^2.1.0",
     "three": "^0.143.0",
     "zustand": "^4.1.1"

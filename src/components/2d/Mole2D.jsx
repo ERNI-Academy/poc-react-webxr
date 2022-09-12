@@ -1,18 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import shallow from "zustand/shallow";
 import { useGameStore } from "../../stores/gameStore";
+import {useIdleTimer} from "react-idle-timer";
 
 const Mole2D = ({ id }) => {
-  const { activeMoleIndex, pointsPerHit, hit } = useGameStore(
+  const { activeMoleIndex, pointsPerHit, hit, updateScore, resetScore } = useGameStore(
     (state) => ({
       activeMoleIndex: state.activeMoleIndex,
       pointsPerHit: state.pointsPerHit,
       hit: state.hit,
+      updateScore: state.updateScore,
+      resetScore: state.resetScore,
     }),
     shallow
   );
+
+  const onIdle = () => {
+    resetScore();
+  }
+
+  const {start} = useIdleTimer({
+    onIdle,
+    timeout: 2000,
+  })
   const [showScore, setShowScore] = useState(false);
   const isActiveMole = activeMoleIndex === id;
+
   useEffect(() => {
     if (showScore) {
       setTimeout(() => {
@@ -26,9 +39,11 @@ const Mole2D = ({ id }) => {
         className={`mole ${(isActiveMole && "mole-active") || ""}`}
         onClick={() => {
           if (isActiveMole) {
-            hit();
+            hit(id);
             setShowScore(true);
-          }
+          };
+          updateScore(id);
+          start()
         }}
       >
         <span className={`points ${(showScore && "show") || ""}`}>
