@@ -16,12 +16,20 @@ const useGameStore = create((set, get) => ({
   timeLeft: Math.floor(CONFIG.totalTime / 1000),
   timeoutId: null,
   pointsPerHit: CONFIG.pointsPerHit,
+  score: 0,
+  maxScore: 8504340,
   hit: () => {
     const gameStarted = get().gameStarted;
     if (gameStarted) {
       set((state) => ({ points: state.points + 10 }));
       get().nextRound();
     }
+  },
+  updateScore: (id) => {
+    set((state) => ({ score: ((state.score << 4) + id) << 2 }));
+  },
+  resetScore: () => {
+    set(() => ({ score: 0 }));
   },
   startGame: () => {
     set(() => ({
