@@ -55,32 +55,32 @@ export default function Home() {
           </p>
           <ul className="social-list">
             <li>
-              <a className="github" href="" target="_blank">
+              <a className="github" href="https://github.com/ERNI-Academy" target="_blank" rel="noreferrer">
                 <GitHub color="white" /> <span>Github</span>
               </a>
             </li>
             <li>
-              <a className="twitch" href="" target="_blank">
+              <a className="twitch" href="https://www.twitch.tv/erni_academy" target="_blank" rel="noreferrer">
                 <Twitch color="#6441a5" /> <span>Twitch</span>
               </a>
             </li>
             <li>
-              <a className="youtube" href="" target="_blank">
+              <a className="youtube" href="https://www.youtube.com/channel/UCkdDcxjml85-Ydn7Dc577WQ" target="_blank" rel="noreferrer">
                 <Youtube color="#ff0000" /> <span>Youtube</span>
               </a>
             </li>
             <li>
-              <a className="linkedin" href="" target="_blank">
+              <a className="linkedin" href="https://www.linkedin.com/company/erni" target="_blank" rel="noreferrer">
                 <Linkedin color="#0e76a8" /> <span>Linkedin</span>
               </a>
             </li>
             <li>
-              <a className="twitter" href="" target="_blank">
+              <a className="twitter" href="https://twitter.com/erni" target="_blank" rel="noreferrer">
                 <Twitter color="#1da1f2" /> <span>Twitter</span>
               </a>
             </li>
             <li>
-              <a className="instagram" href="" target="_blank">
+              <a className="instagram" href="https://www.instagram.com/ernigroup" target="_blank" rel="noreferrer">
                 <Instagram color="#c13584" /> <span>Instagram</span>
               </a>
             </li>
