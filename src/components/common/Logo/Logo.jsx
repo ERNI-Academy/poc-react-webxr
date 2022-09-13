@@ -12,16 +12,7 @@ const Logo = () => {
   );
   return (
     <div className={styles.logo}>
-      {(score === maxScore) ?
-        <img className="challenge-image" alt="Mole attack, join.erni"/> :
-        <img src="/logo.png" alt="Mole attack, join.erni"/>
-      }
-      <style jsx>{`
-        .challenge-image {
-          background: no-repeat center/100% url("/erni-rocks.png");
-          height: 200px;
-        }
-      `}</style>
+        <img src={score === maxScore ? "/erni-rocks.png" : "/logo.png"} alt="Mole attack, join.erni"/>
     </div>
   );
 };
