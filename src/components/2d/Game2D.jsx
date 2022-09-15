@@ -9,15 +9,17 @@ import Label2D from "./Label2D";
 
 const Game2D = () => {
   const [isGameInit, gameInit] = useState(false);
-  const [startButtonReady, setStartButtonReady ] = useState(false);
+  const [startButtonReady, setStartButtonReady] = useState(false);
 
   const router = useRouter();
 
-  const { points, timeLeft, startGame } = useGameStore(
+  const { points, timeLeft, startGame, score, maxScore } = useGameStore(
     (state) => ({
       points: state.points,
       timeLeft: state.timeLeft,
       startGame: state.startGame,
+      score: state.score,
+      maxScore: state.maxScore,
     }),
     shallow
   );
