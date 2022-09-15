@@ -15,15 +15,13 @@ import useVR from "../hooks/useVR";
 
 export default function Home() {
   const router = useRouter();
-  const {supported: vrSupport} = useVR()
+  const { supported: vrSupport } = useVR();
   return (
     <div>
       <Head>
         <title>ERNI Mole Attack - React WebXR PoC</title>
         <meta name="description" content="React WebXR PoC by ERNI" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="prefetch" href="/wood-tile.png" />
-        <link rel="prefetch" href="/mole-wood-tile.png" />
       </Head>
 
       <MainLayout>
@@ -34,53 +32,86 @@ export default function Home() {
             cute-but-not-friendly moles in our basement and we need your help.
           </p>
           <p>
-            Our engineers have been thinking ways to get rid off them and they
-            have managed to build this &quot;simulator&quot; to help us get the
-            best people on board to succeed in our mission.
+            Our engineers have been looking at different ways to get rid off
+            them and they have managed to build this &quot;simulator&quot; to
+            help us get the best people on board to succeed in our mission.
           </p>
           <p>Are you up for this adventure?</p>
           <p>Good luck and be safe out there.</p>
         </div>
 
         <div className="margin-top">
-          <Button onClick={() => router.push(vrSupport ? "/game-3d" : "/game-2d")} animate>
+          <Button
+            onClick={() => router.push(vrSupport ? "/game-3d" : "/game-2d")}
+            animate
+          >
             Check simulator
           </Button>
         </div>
 
         <div className="margin-top">
           <p>
-            Do you want to check what our engineers (we call them ERNIans) are
-            up to? Check out our social profiles.
+            Do you want to check out what our engineers (we call them ERNIans)
+            are up to? Check out our social media profiles.
           </p>
           <ul className="social-list">
             <li>
-              <a className="github" href="" target="_blank">
+              <a
+                className="github"
+                href="https://github.com/ERNI-Academy"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <GitHub color="white" /> <span>Github</span>
               </a>
             </li>
             <li>
-              <a className="twitch" href="" target="_blank">
+              <a
+                className="twitch"
+                href="https://www.twitch.tv/erni_academy"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Twitch color="#6441a5" /> <span>Twitch</span>
               </a>
             </li>
             <li>
-              <a className="youtube" href="" target="_blank">
+              <a
+                className="youtube"
+                href="https://www.youtube.com/channel/UCkdDcxjml85-Ydn7Dc577WQ"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Youtube color="#ff0000" /> <span>Youtube</span>
               </a>
             </li>
             <li>
-              <a className="linkedin" href="" target="_blank">
+              <a
+                className="linkedin"
+                href="https://www.linkedin.com/company/erni/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Linkedin color="#0e76a8" /> <span>Linkedin</span>
               </a>
             </li>
             <li>
-              <a className="twitter" href="" target="_blank">
+              <a
+                className="twitter"
+                href="https://twitter.com/ERNI"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Twitter color="#1da1f2" /> <span>Twitter</span>
               </a>
             </li>
             <li>
-              <a className="instagram" href="" target="_blank">
+              <a
+                className="instagram"
+                href="https://www.instagram.com/ernigroup"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Instagram color="#c13584" /> <span>Instagram</span>
               </a>
             </li>

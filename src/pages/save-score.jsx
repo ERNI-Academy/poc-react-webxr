@@ -22,8 +22,7 @@ const SaveScorePage = () => {
     <MainLayout>
       <div>
         <p>
-          Text to put here, with <a href="#">Terms and Conditions</a> and
-          blablabla.
+          I agree with ERNI’s <a href="https://www.betterask.erni/gtc-privacy-policy/" target="_blank" rel="noreferrer">privacy policy and QCS</a>.
         </p>
         <p>Name</p>
         <input
