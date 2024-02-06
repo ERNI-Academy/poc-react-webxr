@@ -48,13 +48,14 @@ const Game3D = () => {
 
   return (
     <div>
-      <VRButton
+      <XRButton
+        mode={"VR"}
         sessionInit={{
           optionalFeatures: VR_SESSION_FEATURES,
         }}
       >
         Enter VR
-      </VRButton>
+      </XRButton>
       <Canvas shadows camera={{ position: [8, 1.5, 8], fov: 25 }}>
         <XR>
           <GameController3D isGameInit={isGameInit} onGameEnd={onGameEnd} />
