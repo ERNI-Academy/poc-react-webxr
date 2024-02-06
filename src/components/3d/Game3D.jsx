@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useState } from "react";
 import { OrbitControls, Environment, Box, Plane } from "@react-three/drei";
 import BoardGame3D from "./BoardGame3D";
-import {VRButton, XR, Hands, XRButton} from "@react-three/xr";
+import { VRButton, XR, Hands } from "@react-three/xr";
 import Player3D from "./Player3D";
 import { useGameStore } from "../../stores/gameStore";
 import shallow from "zustand/shallow";
@@ -48,14 +48,13 @@ const Game3D = () => {
 
   return (
     <div>
-      <XRButton
-        mode={"VR"}
+      <VRButton
         sessionInit={{
           optionalFeatures: VR_SESSION_FEATURES,
         }}
       >
         Enter VR
-      </XRButton>
+      </VRButton>
       <Canvas shadows camera={{ position: [8, 1.5, 8], fov: 25 }}>
         <XR>
           <GameController3D isGameInit={isGameInit} onGameEnd={onGameEnd} />
