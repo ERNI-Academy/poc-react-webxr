@@ -9,18 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/cannon": "^6.4.0",
-    "@react-three/drei": "^9.24.4",
-    "@react-three/fiber": "^8.6.0",
-    "@react-three/xr": "^5.0.0",
+    "@react-three/cannon": "^6.6.0",
+    "@react-three/drei": "^9.97.1",
+    "@react-three/fiber": "^8.15.16",
+    "@react-three/xr": "^5.7.1",
     "@supabase/supabase-js": "^1.35.6",
-    "next": "12.2.5",
+    "next": "^14.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-feather": "^2.0.10",
     "react-idle-timer": "^5.4.2",
     "react-type-animation": "^2.1.0",
-    "three": "^0.143.0",
+    "three": "^0.161.0",
     "zustand": "^4.1.1"
   },
   "devDependencies": {

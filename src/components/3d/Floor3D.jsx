@@ -11,7 +11,7 @@ const Floor3D = () => {
   });
   return (
     <mesh rotation={[-Math.PI / 2, 0, 0]}>
-      <planeBufferGeometry attach="geometry" args={[40, 40]} />
+      <planeGeometry attach="geometry" args={[40, 40]} />
       <meshStandardMaterial attach="material" map={texture} />
     </mesh>
   );
