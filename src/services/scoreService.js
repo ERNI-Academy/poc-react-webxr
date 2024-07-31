@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = "https://rwgytamqsknjrqaedebn.supabase.co";
-const supabaseKey = process.env.NEXT_PUBLIC_SUPA_KEY;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 class ScoreService {
   constructor() {
