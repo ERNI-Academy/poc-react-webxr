@@ -14,7 +14,7 @@ const GameController3D = ({ isGameInit, onGameEnd }) => {
 
   useEffect(() => {
     const closeSessionAndGo = async () => {
-      if (session !== null) {
+      if (!!session?.frameRate) {
         await session.end();
       }
       onGameEnd();

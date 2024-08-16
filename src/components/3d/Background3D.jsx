@@ -9,6 +9,8 @@ const Background3D = () => {
     txture.offset.set(1, 1);
     txture.repeat.set(2, 1);
   });
+    const logo = useTexture("/erniLogo.png", () => {
+    });
   return (
     <group>
       <Plane args={[20, 7]} position={[4, 2.5, -2]} rotation={[0, -1, 0]}>
@@ -17,6 +19,9 @@ const Background3D = () => {
       <Plane args={[20, 7]} position={[0, 2.5, -5]} rotation={[0, 0, 0]}>
         <meshStandardMaterial map={texture} />
       </Plane>
+        <Plane args={[1, 1]} position={[0, 2.5, -4]} rotation={[0, 0, 0]}>
+            <meshStandardMaterial map={logo} />
+        </Plane>
       <Plane args={[20, 7]} position={[-4, 2.5, -2]} rotation={[0, 1, 0]}>
         <meshStandardMaterial map={texture} />
       </Plane>
