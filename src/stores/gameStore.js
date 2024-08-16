@@ -39,8 +39,8 @@ const useGameStore = create((set, get) => ({
       gameStarted: true,
       timeLeft: Math.floor(CONFIG.totalTime / 1000), // Total time
     }));
-    get().updateTimeLeft();
-    get().nextRound();
+    // get().updateTimeLeft();
+    // get().nextRound();
   },
   nextRound: () => {
     const timeoutId = get().timeoutId;

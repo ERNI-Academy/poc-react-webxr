@@ -12,7 +12,7 @@ const Button3D = ({ onInteraction, children }) => {
         }}
       >
         <group>
-          <Text position={[0, 1, 0.06]} color={"#fff"}>
+          <Text position={[0, 1, 0.06]} color={"#fff"} scale={[0.1, 0.1, 0.1]}>
             {children}
           </Text>
           <RoundedBox
