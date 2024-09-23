@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import styles from "./Logo.module.css";
 import { useGameStore } from "../../../stores/gameStore";
 import shallow from "zustand/shallow";
@@ -15,23 +14,13 @@ const Logo = () => {
 
     return (
         <div className={styles.logo}>
-            {(score === maxScore) ? (
-                <div className="logo-container">
-                    <div className="challenge-image">
-                        <Image src="/erni-rocks.png" alt="Mole attack, join.erni" layout="fill" objectFit="cover" />
-                    </div>
-                    <Image className="play-to-win" src="/playtoWin.png" alt="Play to Win" width={200} height={auto} />
-                </div>
-            ) : (
-                <div className="logo-container">
-                    <Image src="/logo.png" alt="Mole attack, join.erni" width={200} height={auto} />
-                    <Image className="play-to-win" src="/playtowin.png" alt="Play to Win" width={200} height={auto} />
-                </div>
-            )}
+            <div className="logo-container">
+                <img src="/logo.png" alt="Mole attack, join.erni" />
+                <img className="play-to-win" src="/playtowin.png" alt="Play to Win" />
+            </div>
             <style jsx>{`
                 .challenge-image {
-                    position: relative;
-                    width: 200px;
+                    background: no-repeat center/100% url("/erni-rocks.png");
                     height: 200px;
                 }
                 .logo-container {
@@ -42,6 +31,8 @@ const Logo = () => {
                     position: absolute;
                     bottom: -10px; /* Ajusta este valor según sea necesario */
                     right: -10px; /* Ajusta este valor según sea necesario */
+                    width: 200px; /* Ajusta el tamaño según sea necesario */
+                    height: auto;
                 }
             `}</style>
         </div>
