@@ -16,7 +16,7 @@ const Logo = () => {
         <div className={styles.logo}>
             <div className="logo-container">
                 <img src="/logo.png" alt="Mole attack, join.erni" />
-                <img className="play-to-win" src="/playtowin.png" alt="Play to Win" />
+                <img className="play-to-win" src="/playtoWin.png" alt="Play to Win" />
             </div>
             <style jsx>{`
                 .challenge-image {
