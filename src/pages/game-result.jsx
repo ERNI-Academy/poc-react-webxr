@@ -29,16 +29,17 @@ const GameResultPage = () => {
   return (
     <MainLayout>
       <div>
-        <Label2D label="Final Score" value={points} align="center" />
+        <Label2D label="Final Score" value={points} align="center"/>
         {points > 0 && (
-          <Label2D label="Position" value={`#${position}`} align="center" />
+            <Label2D label="Position" value={`#${position}`} align="center"/>
         )}
+        <p style={{fontSize: "1.2em", fontWeight: "bold", color: "white"}}>Congratulations! If you're in the top 3 at the end of the day, you win a prize! Leave your name and email so we can reach out. Good luck!</p>
         {points > 0 && (
-          <div className="save-score-button">
-            <Button onClick={() => router.push("/save-score")}>
-              Save Score
-            </Button>
-          </div>
+            <div className="save-score-button">
+              <Button onClick={() => router.push("/save-score")}>
+                Save Score
+              </Button>
+            </div>
         )}
         <div className="go-back-button">
           <Button onClick={() => router.push("/")}>Go back</Button>
