@@ -33,7 +33,7 @@ const GameResultPage = () => {
         {points > 0 && (
             <Label2D label="Position" value={`#${position}`} align="center"/>
         )}
-        <p style={{fontSize: "1.2em", fontWeight: "bold", color: "white"}}>Congratulations! If you're in the top 3 at the end of the day, you win a prize! Leave your name and email so we can reach out. Good luck!</p>
+        <p style={{fontSize: "1.2em", fontWeight: "bold", color: "white"}}>Congratulations! If you are in the top 3 at the end of the day, you win a prize! Leave your name and email so we can reach out. Good luck!</p>
         {points > 0 && (
             <div className="save-score-button">
               <Button onClick={() => router.push("/save-score")}>

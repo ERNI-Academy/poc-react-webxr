@@ -37,7 +37,7 @@ export default function Home() {
             help us get the best people on board to succeed in our mission.
           </p>
           <p>Are you up for this adventure?</p>
-          <p style={{ fontSize: "1.2em", fontWeight: "bold", color: "#ff0000" }}>If you're in the top 3 at the end of the day, you win a prize! Save your score after playing.</p>
+          <p style={{ fontSize: "1.2em", fontWeight: "bold", color: "#ff0000" }}>If you are in the top 3 at the end of the day, you win a prize! Save your score after playing.</p>
           <p>Good luck and be safe out there.</p>
         </div>
 
